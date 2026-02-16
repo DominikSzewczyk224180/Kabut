@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KABUT - Hurtownia Papiernicza | Od 1991 | Pszów</title>
+    <meta name="description" content="Hurtownia artykułów papierniczych i biurowych KABUT w Pszowie. Materiały biurowe, szkolne, artystyczne i dekoracyjne. Działamy od 1991 roku.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFD700;
+            --yellow-bright: #FFE234;
+            --yellow-dark: #E6C200;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray-light: #f5f5f0;
+            --gray: #888;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--yellow-bright);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            padding: 0;
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+
+        .navbar-logo {
+            height: 50px;
+            padding: 8px 0;
+        }
+
+        .navbar-logo img {
+            height: 100%;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 20px 24px;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* ===== WARSZTATY BANNER ===== */
+        .warsztaty-banner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .warsztaty-banner img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 80px 24px;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--yellow);
+            margin-top: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* ===== O NAS ===== */
+        .o-nas {
+            background: var(--gray-light);
+        }
+
+        .o-nas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .o-nas-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .o-nas-text p strong {
+            color: var(--black);
+        }
+
+        .o-nas-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.8rem;
+            color: var(--black);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ===== OFERTA ===== */
+        .oferta {
+            background: var(--white);
+        }
+
+        .oferta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .oferta-card {
+            background: var(--gray-light);
+            padding: 36px 28px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oferta-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .oferta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--yellow);
+        }
+
+        .oferta-card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .oferta-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .oferta-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== AKTUALNOSCI ===== */
+        .aktualnosci {
+            background: var(--gray-light);
+        }
+
+        .fb-feed-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .fb-fallback {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .fb-fallback p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .btn-yellow {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .btn-yellow:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            border: 2px solid var(--black);
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===== KONTAKT / FOOTER ===== */
+        .kontakt {
+            position: relative;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .kontakt-banner {
+            width: 100%;
+        }
+
+        .kontakt-banner img {
+            width: 100%;
+            display: block;
+        }
+
+        .kontakt-content {
+            padding: 60px 24px;
+        }
+
+        .kontakt-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .kontakt-col h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            color: var(--yellow);
+        }
+
+        .kontakt-col p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .kontakt-col a {
+            color: var(--yellow);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .kontakt-col a:hover {
+            opacity: 0.8;
+        }
+
+        .godziny-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .godziny-table td {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: #ccc;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .godziny-table td:first-child {
+            font-weight: 600;
+            color: var(--white);
+            width: 140px;
+        }
+
+        .godziny-table tr.today td {
+            color: var(--yellow);
+        }
+
+        .map-container {
+            width: 100%;
+            margin-top: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #111;
+            color: #888;
+            padding: 24px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .o-nas-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .oferta-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .kontakt-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 16px 24px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero img {
+                max-width: 90%;
+            }
+
+            .oferta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                gap: 24px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <img src="images/hero.png" alt="KABUT Hurtownia Papiernicza - Katarzyna Kampik - Od 1991">
+    </section>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">
+                <a href="#home"><img src="images/logo.png" alt="KABUT"></a>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Strona główna</a></li>
+                <li><a href="#o-nas">O nas</a></li>
+                <li><a href="#aktualnosci">Aktualności</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WARSZTATY BANNER -->
+    <section class="warsztaty-banner">
+        <img src="images/warsztaty.png" alt="Prowadzisz warsztaty? Animacje dla dzieci? Jesteś twórcą? Znajdź u nas wszystko czego potrzebujesz!">
+    </section>
+
+    <!-- O NAS -->
+    <section class="section o-nas" id="o-nas">
+        <div class="section-inner">
+            <div class="o-nas-grid">
+                <div class="o-nas-text fade-in">
+                    <h2 class="section-title">O nas</h2>
+                    <p class="section-subtitle">Hurtownia artykułów papierniczych i biurowych z tradycją od 1991 roku.</p>
+                    <p>
+                        Firma <strong>KABUT</strong>, prowadzona przez Katarzynę Kampik, znajduje się w Pszowie w powiecie wodzisławskim. 
+                        Od ponad 30 lat dostarczamy naszym klientom szeroki wybór materiałów biurowych, szkolnych oraz artystycznych i dekoracyjnych.
+                    </p>
+                    <p>
+                        Specjalizujemy się w sprzedaży artykułów piśmienniczych renomowanych producentów. W naszej ofercie znajdziesz 
+                        papier ksero, etykiety samoprzylepne, rolki do kas fiskalnych, bruliony, zeszyty, a także kartki okolicznościowe 
+                        i torebki ozdobne. Oferujemy również artykuły higieniczne, chemiczne oraz wyposażenie biura.
+                    </p>
+                    <p>
+                        Dzięki wieloletniemu doświadczeniu i współpracy z uznanymi producentami zapewniamy najwyższą jakość produktów 
+                        oraz profesjonalną obsługę. <strong>Serdecznie zapraszamy!</strong>
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Lat doświadczenia</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.7★</div>
+                            <div class="stat-label">Ocena Google</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Produktów w ofercie</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-nas-image fade-in">
+                    <img src="images/artykuly.png" alt="Wiele więcej niż tylko papier - odkryj najlepsze artykuły biurowe i szkolne">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="section oferta">
+        <div class="section-inner">
+            <h2 class="section-title fade-in">Nasza oferta</h2>
+            <p class="section-subtitle fade-in">Znajdź u nas wszystko, czego potrzebujesz do biura, szkoły i nie tylko.</p>
+            <div class="oferta-grid">
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">📝</div>
+                    <h3>Materiały biurowe i szkolne</h3>
+                    <p>Długopisy, pióra, zakreślacze, markery, ołówki, zeszyty, bruliony, teczki i wiele więcej od renomowanych producentów.</p>
+                </div>
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">📄</div>
+                    <h3>Papier i druki</h3>
+                    <p>Papier ksero, etykiety samoprzylepne, rolki do kas fiskalnych, koperty i papiery ozdobne w różnych formatach.</p>
+                </div>
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">🎨</div>
+                    <h3>Artykuły artystyczne</h3>
+                    <p>Farby, kredki, bloki rysunkowe, flamastry i akcesoria dla twórców, animatorów i nauczycieli.</p>
+                </div>
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">🎁</div>
+                    <h3>Kartki i opakowania</h3>
+                    <p>Kartki okolicznościowe, torebki ozdobne, papiery do pakowania prezentów na każdą okazję.</p>
+                </div>
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">🧴</div>
+                    <h3>Artykuły higieniczne</h3>
+                    <p>Środki czystości, ręczniki papierowe, chusteczki i inne artykuły higieniczne do biura i domu.</p>
+                </div>
+                <div class="oferta-card fade-in">
+                    <div class="oferta-card-icon">🗄️</div>
+                    <h3>Wyposażenie biura</h3>
+                    <p>Segregatory, organizery, niszczarki, laminatory i wszystko do organizacji dokumentów i przestrzeni biurowej.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKTUALNOSCI -->
+    <section class="section aktualnosci" id="aktualnosci">
+        <div class="section-inner">
+            <h2 class="section-title fade-in">Aktualności</h2>
+            <p class="section-subtitle fade-in">Bądź na bieżąco — śledź nas w mediach społecznościowych!</p>
+            
+            <div class="fb-feed-container fade-in">
+                <div id="fb-widget">
+                    <iframe 
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkabuthurtowniapapiernicza&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="500" 
+                        height="600" 
+                        style="border:none;overflow:hidden;max-width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.08);" 
+                        scrolling="no" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="social-links fade-in" style="margin-top:32px;">
+                <a href="https://www.facebook.com/kabuthurtowniapapiernicza" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/kabut_hurtowniapapiernicza" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="kontakt" id="kontakt">
+        <div class="kontakt-banner">
+            <img src="images/budynek.png" alt="Hurtownia KABUT w Pszowie - ul. Pszowska 445 - Serdecznie zapraszamy!">
+        </div>
+        <div class="kontakt-content">
+            <div class="kontakt-inner">
+                <div class="kontakt-col fade-in">
+                    <h3>Adres</h3>
+                    <p>
+                        Hurtownia Papiernicza KABUT<br>
+                        Katarzyna Kampik<br><br>
+                        ul. Pszowska 445<br>
+                        44-370 Pszów
+                    </p>
+                </div>
+                <div class="kontakt-col fade-in">
+                    <h3>Godziny otwarcia</h3>
+                    <table class="godziny-table">
+                        <tr><td>Poniedziałek</td><td>8:00 — 17:00</td></tr>
+                        <tr><td>Wtorek</td><td>8:00 — 17:00</td></tr>
+                        <tr><td>Środa</td><td>8:00 — 17:00</td></tr>
+                        <tr><td>Czwartek</td><td>8:00 — 17:00</td></tr>
+                        <tr><td>Piątek</td><td>8:00 — 17:00</td></tr>
+                        <tr><td>Sobota</td><td>8:00 — 13:00</td></tr>
+                        <tr><td>Niedziela</td><td>Zamknięte</td></tr>
+                    </table>
+                </div>
+                <div class="kontakt-col fade-in">
+                    <h3>Kontakt</h3>
+                    <p>
+                        Telefon:<br>
+                        <a href="tel:+48324558827">32 455 88 27</a><br><br>
+                        Strona www:<br>
+                        <a href="http://kabut-pszow.pl" target="_blank" rel="noopener">kabut-pszow.pl</a><br><br>
+                        Usługi ksero dostępne na miejscu.
+                    </p>
+                </div>
+            </div>
+            <div class="map-container fade-in">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.3!2d18.3917!3d50.0408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711439d2bf1a3e5%3A0xaeb80001f64d9098!2sHurtownia%20%22Kabut%22%20w%20Pszowie%20-%20artyku%C5%82y%20biurowe%20i%20papiernicze!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Hurtownia Papiernicza KABUT — Katarzyna Kampik. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const top = section.offsetTop - 100;
+                const bottom = top + section.offsetHeight;
+                const id = section.getAttribute('id');
+                
+                if (scrollY >= top && scrollY < bottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            // Navbar shadow
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Highlight today in opening hours
+        const dayIndex = new Date().getDay();
+        const dayMap = [6, 0, 1, 2, 3, 4, 5]; // Sun=6, Mon=0...
+        const rows = document.querySelectorAll('.godziny-table tr');
+        if (rows[dayMap[dayIndex]]) {
+            rows[dayMap[dayIndex]].classList.add('today');
+        }
+    </script>
+
+</body>
+</html>
