@@ -75,8 +75,8 @@ body {
 }
 
 .navbar-logo {
-    height: 120px;
-    padding: 14px 0;
+    height: 140px;
+    padding: 10px 0;
 }
 
 .navbar-logo img {
@@ -96,10 +96,10 @@ body {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 48px 28px;
+    padding: 20px 24px;
     display: block;
     transition: background 0.3s, color 0.3s;
     position: relative;
