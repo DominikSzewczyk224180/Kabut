@@ -29,13 +29,8 @@ body {
 /* ===== HERO ===== */
 .hero {
     width: 100%;
-    min-height: 100vh;
     position: relative;
-    overflow: hidden;
     background: var(--yellow-bright);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero img {
@@ -74,8 +69,8 @@ body {
 }
 
 .navbar-logo {
-    height: 70px;
-    padding: 10px 0;
+    height: 120px;
+    padding: 14px 0;
 }
 
 .navbar-logo img {
@@ -95,10 +90,10 @@ body {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 20px 24px;
+    padding: 48px 28px;
     display: block;
     transition: background 0.3s, color 0.3s;
     position: relative;
