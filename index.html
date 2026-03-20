@@ -1,224 +1,314 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KABUT - Hurtownia Papiernicza | Od 1991 | Pszów</title>
-    <meta name="description" content="Hurtownia artykułów papierniczych i biurowych KABUT w Pszowie. Materiały biurowe, szkolne, artystyczne i dekoracyjne. Działamy od 1991 roku.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pracownia Mebla | Kuchnie & Wnętrza — Rybnik</title>
+  <meta name="description" content="Pracownia Mebla — meble kuchenne na wymiar, kuchnie nowoczesne i klasyczne, meble nietypowe, projekty 3D. Rybnik / Rzuchów.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <img src="images/hero.jpg" alt="KABUT Hurtownia Papiernicza - Katarzyna Kampik - Od 1991">
-    </section>
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/site/logo-white.png" alt="Pracownia Mebla" class="logo-white">
+        <img src="images/site/logo.png" alt="Pracownia Mebla" class="logo-color">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#realizacje">Realizacje</a></li>
+        <li><a href="#opinie">Opinie</a></li>
+        <li><a href="#aktualnosci">Aktualności</a></li>
+        <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-inner">
-            <div class="navbar-logo">
-                <a href="#home"><img src="images/logo-transparent.png" alt="KABUT"></a>
-            </div>
-            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Strona główna</a></li>
-                <li><a href="#o-nas">O nas</a></li>
-                <li><a href="#aktualnosci">Aktualności</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="#oferta" onclick="closeMobile()">Oferta</a>
+    <a href="#o-nas" onclick="closeMobile()">O nas</a>
+    <a href="#realizacje" onclick="closeMobile()">Realizacje</a>
+    <a href="#opinie" onclick="closeMobile()">Opinie</a>
+    <a href="#aktualnosci" onclick="closeMobile()">Aktualności</a>
+    <a href="#kontakt" onclick="closeMobile()">Kontakt</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-tag">Kuchnie & Wnętrza — Rybnik</span>
+        <h1>Tworzymy meble,<br>które <em>opowiadają</em><br>Twoją historię</h1>
+        <p class="hero-sub">Meble kuchenne na wymiar, projekty 3D i unikalne rozwiązania wnętrzarskie. Polski design w najlepszym wydaniu.</p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary">
+            Umów wizytę
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#oferta" class="btn-outline">Zobacz realizacje</a>
         </div>
-    </nav>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- O NAS -->
-    <section class="section o-nas" id="o-nas">
-        <div class="section-inner">
-            <div class="o-nas-grid">
-                <div class="o-nas-text fade-in">
-                    <h2 class="section-title">O nas</h2>
-                    <p class="section-subtitle">Hurtownia artykułów papierniczych i biurowych z tradycją od 1991 roku.</p>
-                    <p>
-                        Firma <strong>KABUT</strong>, prowadzona przez Katarzynę Kampik, znajduje się w Pszowie w powiecie wodzisławskim. 
-                        Od ponad 30 lat dostarczamy naszym klientom szeroki wybór materiałów biurowych, szkolnych oraz artystycznych i dekoracyjnych.
-                    </p>
-                    <p>
-                        Specjalizujemy się w sprzedaży artykułów piśmienniczych renomowanych producentów. W naszej ofercie znajdziesz 
-                        papier ksero, etykiety samoprzylepne, rolki do kas fiskalnych, bruliony, zeszyty, a także kartki okolicznościowe 
-                        i torebki ozdobne. Oferujemy również artykuły higieniczne, chemiczne oraz wyposażenie biura.
-                    </p>
-                    <p>
-                        Dzięki wieloletniemu doświadczeniu i współpracy z uznanymi producentami zapewniamy najwyższą jakość produktów 
-                        oraz profesjonalną obsługę. <strong>Serdecznie zapraszamy!</strong>
-                    </p>
-                    <div class="stats-row">
-                        <div class="stat">
-                            <div class="stat-number">30+</div>
-                            <div class="stat-label">Lat doświadczenia</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">4.7★</div>
-                            <div class="stat-label">Ocena Google</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Produktów w ofercie</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="o-nas-image fade-in">
-                    <img src="images/artykuly.png" alt="Wiele więcej niż tylko papier - odkryj najlepsze artykuły biurowe i szkolne">
-                </div>
-            </div>
+  <!-- ========== PRODUCTS — auto-generated from gallery-data.json ========== -->
+  <section class="products" id="oferta">
+    <div class="container">
+      <div class="products-header reveal">
+        <span class="section-label">Oferta</span>
+        <h2 class="section-title">Meble szyte na <em>miarę</em></h2>
+        <p>Każdy projekt to indywidualna historia — dopasowana do Twojego stylu, przestrzeni i potrzeb. Kliknij kategorię, aby zobaczyć więcej zdjęć.</p>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Cards generated by JS from gallery-data.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY GALLERY MODAL ========== -->
+  <div class="cat-gallery-modal" id="catGallery">
+    <div class="cat-gallery-header">
+      <span class="cat-gallery-title" id="catGalleryTitle"></span>
+      <button class="cat-gallery-close" id="catGalleryClose">&times;</button>
+    </div>
+    <div class="cat-gallery-body">
+      <button class="cat-gallery-nav" id="catPrev">&#8249;</button>
+      <div class="cat-gallery-main">
+        <img src="" alt="" id="catGalleryImg">
+      </div>
+      <button class="cat-gallery-nav" id="catNext">&#8250;</button>
+    </div>
+    <div class="cat-gallery-counter">
+      <span id="catGalleryCounter"></span>
+    </div>
+    <div class="cat-gallery-thumbs" id="catGalleryThumbs"></div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="o-nas">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="images/site/restaurant.png" alt="Wnętrze Pracowni Mebla" loading="lazy">
+          <div class="about-image-badge">
+            <div class="badge-number">2015</div>
+            <div class="badge-text">Rok założenia</div>
+          </div>
         </div>
-    </section>
-
-    <!-- OFERTA -->
-    <section class="section oferta">
-        <div class="section-inner">
-            <h2 class="section-title fade-in">Nasza oferta</h2>
-            <p class="section-subtitle fade-in">Znajdź u nas wszystko, czego potrzebujesz do biura, szkoły i nie tylko.</p>
-            <div class="oferta-grid">
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40V8l4-4h16l4 4v32"/><path d="M16 4v8h16V4"/><line x1="20" y1="20" x2="32" y2="20"/><line x1="20" y1="26" x2="32" y2="26"/><line x1="20" y1="32" x2="28" y2="32"/><circle cx="16" cy="20" r="1" fill="currentColor"/><circle cx="16" cy="26" r="1" fill="currentColor"/><circle cx="16" cy="32" r="1" fill="currentColor"/></svg>
-                    </div>
-                    <h3>Materiały biurowe i szkolne</h3>
-                    <p>Długopisy, pióra, zakreślacze, markery, ołówki, zeszyty, bruliony, teczki i wiele więcej od renomowanych producentów.</p>
-                </div>
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="2"/><line x1="6" y1="14" x2="42" y2="14"/><line x1="14" y1="6" x2="14" y2="14"/><line x1="14" y1="22" x2="34" y2="22"/><line x1="14" y1="28" x2="30" y2="28"/><line x1="14" y1="34" x2="26" y2="34"/></svg>
-                    </div>
-                    <h3>Papier i druki</h3>
-                    <p>Papier ksero, etykiety samoprzylepne, rolki do kas fiskalnych, koperty i papiery ozdobne w różnych formatach.</p>
-                </div>
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M34 6L18 22a4 4 0 00-1 2.5L16 30l5.5-1a4 4 0 002.5-1L40 12"/><path d="M34 6l8 6-6 8-8-6z"/><path d="M16 30c-2 2-6 4-6 8s4 4 6 2 2-4 2-6"/></svg>
-                    </div>
-                    <h3>Artykuły artystyczne</h3>
-                    <p>Farby, kredki, bloki rysunkowe, flamastry i akcesoria dla twórców, animatorów i nauczycieli.</p>
-                </div>
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="32" height="28" rx="2"/><path d="M16 12V8a8 8 0 0116 0v4"/><path d="M20 24h8"/><path d="M24 20v8"/></svg>
-                    </div>
-                    <h3>Kartki i opakowania</h3>
-                    <p>Kartki okolicznościowe, torebki ozdobne, papiery do pakowania prezentów na każdą okazję.</p>
-                </div>
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h24v32a4 4 0 01-4 4H16a4 4 0 01-4-4V8z"/><path d="M8 8h32"/><path d="M20 4h8"/><line x1="18" y1="18" x2="18" y2="30"/><line x1="24" y1="16" x2="24" y2="32"/><line x1="30" y1="18" x2="30" y2="30"/></svg>
-                    </div>
-                    <h3>Artykuły higieniczne</h3>
-                    <p>Środki czystości, ręczniki papierowe, chusteczki i inne artykuły higieniczne do biura i domu.</p>
-                </div>
-                <div class="oferta-card fade-in">
-                    <div class="oferta-card-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="32" rx="2"/><line x1="6" y1="16" x2="42" y2="16"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="6" y1="32" x2="42" y2="32"/><rect x="28" y="8" width="10" height="8" rx="1" fill="currentColor" opacity="0.15"/></svg>
-                    </div>
-                    <h3>Wyposażenie biura</h3>
-                    <p>Segregatory, organizery, niszczarki, laminatory i wszystko do organizacji dokumentów i przestrzeni biurowej.</p>
-                </div>
+        <div class="about-content reveal">
+          <span class="section-label">O pracowni</span>
+          <h2 class="section-title">Gdzie polski design<br>spotyka <em>rzemiosło</em></h2>
+          <p class="about-text">
+            Pracownia Mebla Kuchnie & Wnętrza to miejsce, w którym prezentujemy ikony współczesnego polskiego designu oraz wzornictwa. Śledzimy aktualne trendy w dziedzinie wyposażenia wnętrz i tworzymy niepowtarzalne meble kuchenne.
+          </p>
+          <p class="about-text">
+            Chcemy podzielić się z Państwem tym, co polski design ma najlepsze. W naszej ofercie znajdą Państwo kuchnie oraz meble, które cechują się dbałością o szczegół — pokazaniem tego, co piękne, niepowtarzalne i unikatowe.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <h4>Projekty 3D</h4>
+              <p>Studio projektowe z wizualizacją</p>
             </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+              </div>
+              <h4>Na wymiar</h4>
+              <p>Każdy mebel dopasowany idealnie</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h4>Jakość</h4>
+              <p>Materiały najwyższej klasy</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h4>Doradztwo</h4>
+              <p>Pomagamy na każdym etapie</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- AKTUALNOSCI -->
-    <section class="section aktualnosci" id="aktualnosci">
-        <div class="section-inner">
-            <h2 class="section-title fade-in">Aktualności</h2>
-            <p class="section-subtitle fade-in">Bądź na bieżąco — śledź nas w mediach społecznościowych!</p>
-            
-            <div class="fb-feed-container fade-in">
-                <div id="fb-widget">
-                    <iframe 
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkabuthurtowniapapiernicza&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                        width="500" 
-                        height="600" 
-                        style="border:none;overflow:hidden;max-width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.08);" 
-                        scrolling="no" 
-                        frameborder="0" 
-                        allowfullscreen="true" 
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="social-links fade-in" style="margin-top:32px;">
-                <a href="https://www.facebook.com/kabuthurtowniapapiernicza" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Facebook
-                </a>
-                <a href="https://www.instagram.com/kabut_hurtowniapapiernicza" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    Instagram
-                </a>
-            </div>
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="realizacje">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <div>
+          <span class="section-label">Realizacje</span>
+          <h2 class="section-title">Nasze <em>projekty</em></h2>
         </div>
-    </section>
+      </div>
+      <div class="gallery-masonry" id="galleryMasonry">
+        <!-- Auto-generated from gallery-data.json -->
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
+        <button class="btn-primary" id="galleryLoadMore" onclick="showMoreGallery()" style="background: transparent; color: var(--brand); border: 1.5px solid var(--brand);">
+          Pokaż więcej
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <!-- KONTAKT -->
-    <section class="kontakt" id="kontakt">
-        <div class="kontakt-banner">
-            <img src="images/budynek.jpg" alt="Hurtownia KABUT w Pszowie - ul. Pszowska 445 - Serdecznie zapraszamy!">
+  <!-- ========== REVIEWS ========== -->
+  <section class="reviews" id="opinie">
+    <div class="container">
+      <div class="reviews-header reveal">
+        <div class="reviews-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <div class="kontakt-content">
-            <div class="kontakt-inner">
-                <div class="kontakt-col fade-in">
-                    <h3>Adres</h3>
-                    <p>
-                        Hurtownia Papiernicza KABUT<br>
-                        Katarzyna Kampik<br><br>
-                        ul. Pszowska 445<br>
-                        44-370 Pszów
-                    </p>
-                </div>
-                <div class="kontakt-col fade-in">
-                    <h3>Godziny otwarcia</h3>
-                    <table class="godziny-table">
-                        <tr><td>Poniedziałek</td><td>8:00 — 17:00</td></tr>
-                        <tr><td>Wtorek</td><td>8:00 — 17:00</td></tr>
-                        <tr><td>Środa</td><td>8:00 — 17:00</td></tr>
-                        <tr><td>Czwartek</td><td>8:00 — 17:00</td></tr>
-                        <tr><td>Piątek</td><td>8:00 — 17:00</td></tr>
-                        <tr><td>Sobota</td><td>8:00 — 13:00</td></tr>
-                        <tr><td>Niedziela</td><td>Zamknięte</td></tr>
-                    </table>
-                </div>
-                <div class="kontakt-col fade-in">
-                    <h3>Kontakt</h3>
-                    <p>
-                        Telefon:<br>
-                        <a href="tel:+48324558827">32 455 88 27</a><br><br>
-                        E-mail:<br>
-                        <a href="mailto:hurtownia@kabut-pszow.pl">hurtownia@kabut-pszow.pl</a><br><br>
-                        Usługi ksero dostępne na miejscu.
-                    </p>
-                </div>
-            </div>
-            <div class="map-container fade-in">
-                <iframe 
-                    src="https://www.google.com/maps?q=Hurtownia+Kabut+Pszowska+445+44-370+Psz%C3%B3w&output=embed" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+        <p class="reviews-rating">4.8 / 5 — 37 opinii na Google</p>
+        <span class="section-label" style="margin-top: 1.5rem;">Co mówią nasi klienci</span>
+        <h2 class="section-title">Opinie, które <em>mówią</em> same za siebie</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-quote">&ldquo;</div>
+          <p class="review-text">Panowie z pracowni mebla wykonali kawał świetnej roboty. Robili dla nas kuchnię oraz szafę do przedpokoju. Doskonała współpraca. Pan Rafał cierpliwie odpowiadał na wszystkie pytania i pomysły. Efekt dosłownie przerósł nasze oczekiwania. Polecam z całego serca!</p>
+          <div class="review-author">
+            <div class="review-avatar">JJ</div>
+            <div><div class="review-name">Justyna Jakub</div><div class="review-source">Google — 4 miesiące temu</div></div>
+          </div>
         </div>
-    </section>
+        <div class="review-card reveal">
+          <div class="review-quote">&ldquo;</div>
+          <p class="review-text">Bardzo dobra współpraca, szybki termin realizacji. Meble kuchenne oraz szafy wykonane bardzo starannie zgodnie z projektem. Podczas montażu wszystko idealnie pasowało. Serdecznie polecamy i dziękujemy wykonawcy.</p>
+          <div class="review-author">
+            <div class="review-avatar">AW</div>
+            <div><div class="review-name">Anna Wojaczek</div><div class="review-source">Google — 2 lata temu</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-quote">&ldquo;</div>
+          <p class="review-text">Profesjonalne podejście od projektu do montażu. Kuchnia wygląda dokładnie tak, jak na wizualizacji 3D. Materiały najwyższej jakości, wszystko wykonane z dbałością o każdy detal. Gorąco polecam!</p>
+          <div class="review-author">
+            <div class="review-avatar">MK</div>
+            <div><div class="review-name">Marek K.</div><div class="review-source">Google</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2025 Hurtownia Papiernicza KABUT — Katarzyna Kampik. Wszelkie prawa zastrzeżone.</p>
-    </footer>
+  <!-- ========== AKTUALNOŚCI ========== -->
+  <section class="news" id="aktualnosci">
+    <div class="container">
+      <div class="news-header reveal">
+        <span class="section-label">Aktualności</span>
+        <h2 class="section-title">Bądź na <em>bieżąco</em></h2>
+        <p>Najnowsze realizacje, inspiracje i nowości prosto z naszego Facebooka.</p>
+      </div>
+      <div class="news-embed reveal">
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpracowniamebla&tabs=timeline&width=500&height=700&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+          width="500" height="700"
+          style="border:none;overflow:hidden;border-radius:16px;max-width:100%;"
+          scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          loading="lazy">
+        </iframe>
+      </div>
+      <div style="text-align: center;" class="reveal">
+        <a href="https://www.facebook.com/pracowniamebla" target="_blank" class="news-fb-link">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Obserwuj nas na Facebooku
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="kontakt">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-label">Kontakt</span>
+        <h2 class="section-title">Porozmawiajmy o Twoim <em>projekcie</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <h3>Salon meblowy Pracownia Mebla</h3>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="contact-item-label">Adres</div><div class="contact-item-value">ul. Sportowa 40, 44-285 Rzuchów</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:+48668646402">+48 668 646 402</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:studio@pracownia-mebla.pl">studio@pracownia-mebla.pl</a></div></div>
+          </div>
+          <div class="contact-hours">
+            <h4>Godziny otwarcia</h4>
+            <div class="contact-hours-row"><span>Poniedziałek — Piątek</span><span>8:00 — 16:00</span></div>
+            <div class="contact-hours-row closed"><span>Sobota — Niedziela</span><span>Zamknięte</span></div>
+            <p style="font-size: 0.82rem; color: var(--brand-dark); margin-top: 0.8rem; line-height: 1.5; font-weight: 400;">
+              Przed wizytą w salonie prosimy o wcześniejszy kontakt telefoniczny w celu umówienia spotkania — pozwoli nam to poświęcić Państwu pełną uwagę.
+            </p>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.facebook.com/pracowniamebla" target="_blank" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://pracownia-mebla.pl" target="_blank" class="social-link" aria-label="Website">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-map reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.5!2d18.5!3d50.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711547bbd4d8a5d%3A0x0!2sSportowa+40%2C+44-285+Rzuch%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo"><img src="images/site/logo-white.png" alt="Pracownia Mebla"></div>
+      <p>&copy; 2025 Pracownia Mebla Kuchnie & Wnętrza. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX (realizacje) ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Preview" id="lightboxImg">
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
